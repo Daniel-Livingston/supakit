@@ -1,3 +1,16 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { Container } from '@svelteuidev/core';
+	import { Seo } from '$lib/internal';
+</script>
+
+<Seo title="Home" />
+
+<Container>
+	<h1>Home</h1>
+</Container>
+
+<style>
+	h1 {
+		text-align: center;
+	}
+</style>

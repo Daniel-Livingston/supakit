@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Input, InputWrapper, UnstyledButton } from '@svelteuidev/core';
 	import type { TextInputProps } from '@svelteuidev/core';
-	import { EyeNone, EyeOpen } from 'radix-icons-svelte';
+	import { EyeNone, EyeOpen, LockClosed } from 'radix-icons-svelte';
 
 	interface $$Props extends TextInputProps {}
 
@@ -14,7 +14,7 @@
 </script>
 
 <InputWrapper label="Password" {...$$props}>
-	<Input {invalid} {type} {...$$props} bind:value>
+	<Input icon={LockClosed} {invalid} {type} {...$$props} bind:value>
 		<UnstyledButton
 			slot="rightSection"
 			type="button"

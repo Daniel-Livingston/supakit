@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { Button, Container } from '@svelteuidev/core';
 	import { EmailInput, PasswordInput, Seo } from '$lib/internal';
+	import { isValidEmail, isValidPassword } from './validation';
 
 	let email = '';
 	let password = '';
 
-	$: emailError = (email.length > 0 && !email.match(/.*@.+\..+/)) as boolean;
+	$: emailError = (email.length > 0 && !isValidEmail(email)) as boolean;
 	$: passwordError =
-		password.length > 0 && password.length < 8
+		password.length > 0 && isValidPassword(password)
 			? 'Passwords must be at least 8 characters long.'
 			: undefined;
 </script>
